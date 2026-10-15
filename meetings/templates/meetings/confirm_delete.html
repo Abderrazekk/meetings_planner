@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer la réunion</title>
+</head>
+<body>
+    <h1>Confirmer la suppression</h1>
+    <p>Êtes-vous sûr de vouloir supprimer la réunion "<strong>{{ meeting.title }}</strong>" prévue le {{ meeting.date }} ?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" style="color: red;">Oui, supprimer</button>
+        <a href="{% url 'detail' meeting.id %}">Annuler</a>
+    </form>
+</body>
+</html>

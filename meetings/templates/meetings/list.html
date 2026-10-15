@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meetings List</title>
+</head>
+<body>
+    <h1>All Meetings</h1>
+    
+    <p><a href="{% url 'new' %}">+ Ajouter une réunion</a></p>
+
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="{% url 'detail' meeting.id %}">
+                    <strong>{{ meeting.title }}</strong>
+                </a> - {{ meeting.date }}
+            </li>
+        {% empty %}
+            <li>No meetings found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

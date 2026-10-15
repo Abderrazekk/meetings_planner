@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ meeting.title }}</title>
+</head>
+<body>
+    <h1>{{ meeting.title }}</h1>
+    <p><strong>Date:</strong> {{ meeting.date }}</p>
+    <p><strong>Meeting ID:</strong> {{ meeting.id }}</p>
+    
+    <hr>
+    <!-- Bouton pour supprimer -->
+    <p><a href="{% url 'delete' meeting.id %}" style="color: red;">Supprimer cette réunion</a></p>
+    
+    <a href="{% url 'meeting_list' %}">Retour à la liste</a>
+</body>
+</html>

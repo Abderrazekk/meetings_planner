@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nouvelle Réunion</title>
+</head>
+<body>
+    <h1>Créer une nouvelle réunion</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+    
+    <br>
+    <a href="{% url 'meeting_list' %}">Annuler et retourner à la liste</a>
+</body>
+</html>
